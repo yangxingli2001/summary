@@ -2,28 +2,51 @@
 <html lang="en">
 <head>
   <title>.......</title>
+  <style>
+    body {
+       background: #ecece6;
+    }
+    .main{
+      width:1240px;
+      margin:0 auto;
+       background: #fff;
+    }
+    .title{
+      font-size:14px;
+      ling-height:1.5
+    }
+    .subTitle{
+      font-size:12px;
+      ling-height:1.5
+    }
+  </style>
 </head>
 <body>
-    1.foreach无法return和break的解决办法
-    1）使用try catch 的方法
-    var arr=[1,2,3,4,5,1,5,4];
-     try{
-          arr.forEach(function(item,index){
-              console.log(index)
-              if(item==5){
-                  console.log("error1")
-                  throw new Error("不能等于5")
-                  return
-              }else if(item==4){
-                  console.log("error4")
-                  throw new Error("不能等于4")
-                  return
-              }
-          })
-      }
-      catch(e){
-         alert(e.message);
-      }
-    2）使用for来替换forEach
+  <div class="main">
+      <div class="title">1.foreach无法return和break的解决办法</div>
+      <div class="subTitle">1）使用try catch 的方法</div>
+      <pre>
+        var arr=[1,2,3,4,5,1,5,4];
+         try{
+              arr.forEach(function(item,index){
+                  console.log(index)
+                  if(item==5){
+                      console.log("error1")
+                      throw new Error("不能等于5")
+                      return
+                  }else if(item==4){
+                      console.log("error4")
+                      throw new Error("不能等于4")
+                      return
+                  }
+              })
+          }
+          catch(e){
+             alert(e.message);
+          }
+        </pre>
+        <div class="subTitle">2）使用for来替换forEach</div>
+  </div>
+  
 </body>
 </html>
