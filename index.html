@@ -1,9 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
+  <title>.......</title>
 </head>
 <body>
-1.foreach
+    1.foreach无法return和break的解决办法
+    1）使用try catch 的方法
+    var arr=[1,2,3,4,5,1,5,4];
+     try{
+          arr.forEach(function(item,index){
+              console.log(index)
+              if(item==5){
+                  console.log("error1")
+                  throw new Error("不能等于5")
+                  return
+              }else if(item==4){
+                  console.log("error4")
+                  throw new Error("不能等于4")
+                  return
+              }
+          })
+      }
+      catch(e){
+         alert(e.message);
+      }
+    2）使用for来替换forEach
 </body>
 </html>
